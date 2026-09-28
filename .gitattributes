@@ -1,0 +1,5 @@
+# Preserve historical file bytes, including line endings.
+* -text
+*.py diff=python
+*.pdf binary
+*.zip binary
