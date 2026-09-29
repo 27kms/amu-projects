@@ -17,3 +17,9 @@ Run the synthetic regression tests with `python3 -m unittest discover -s scripts
 ## Credits and reuse
 
 Git commits for this import are attributed to `27kms`. The paper retains its original author name and citations. No additional license is assigned by this import.
+
+## Validation scope
+
+The checker compares manifest source and destination paths with an independent fixed inventory in the script. It verifies imported bytes against the manifest and checks that change descriptions agree with its source and imported hashes. The manifest records provenance; it is not an independent authentication of the original files.
+
+All repository notebooks, including additions outside the import manifest, receive structure checks and checks for eight-digit values following a student-ID label and nonempty `grader_api_key` values. Local `.git`, `.venv`, and `venv` directories are excluded. Grading-key fields must be empty or use `null`, `None`, or `~`; runtime expressions are not supported in this static archive. These checks cover the known assignment fields, not every possible secret format.
