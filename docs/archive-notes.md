@@ -10,7 +10,9 @@ The download does not contain LaTeX source, simulation code, or additional proje
 
 `docs/source-manifest.json` records the SHA-256 hash and size of each imported file. `.gitattributes` disables automatic line-ending conversion so checkouts preserve these bytes.
 
-Run `python3 scripts/check_archive.py` with an existing Python 3.11 or newer installation. The check verifies the imported files and local documentation links without installing packages. The GitHub Actions workflow runs the same check using tools already present on its runner.
+Run `python3 scripts/check_archive.py` with an existing Python 3.11 or newer installation. The check verifies the fixed two-file inventory, imported file hashes, provenance descriptions, and local documentation links without installing packages.
+
+Run the synthetic regression tests with `python3 -m unittest discover -s scripts -p 'test_*.py'`. The GitHub Actions workflow runs both commands using tools already present on its runner.
 
 ## Credits and reuse
 
