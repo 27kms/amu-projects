@@ -22,6 +22,6 @@ Git commits for this import are attributed to `27kms`. The paper retains its ori
 
 `scripts/approved-imports.json` fixes the reviewed source paths, destination paths, original hashes, imported hashes, and sizes. It was established by comparing the import with the downloaded files. The checker requires the manifest to match this independent baseline and imported bytes to match the approved hashes. Editing the manifest alone cannot authorize an archive change.
 
-These are preserved snapshots. Any change to an imported notebook, including restoring a redacted value in any syntax or location, fails its hash check. Additional notebooks are rejected, including case variants of `.ipynb`. Local `.git`, `.venv`, and `venv` directories are excluded. Documentation and maintenance scripts may still be edited.
+These are preserved snapshots. Any change to an imported notebook, including restoring a redacted value in any syntax or location, fails its hash check. Additional notebooks are rejected, including case variants of `.ipynb`. Local `.git`, `.venv`, `venv`, and `.ipynb_checkpoints` directories are excluded. Documentation and maintenance scripts may still be edited.
 
 The checker does not assess arbitrary notebook content for secrets. An intentional future archive revision requires a separately reviewed baseline update and a fresh content review. The baseline is a repository invariant, not protection against someone deliberately changing both the baseline and validator.

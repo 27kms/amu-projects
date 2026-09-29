@@ -67,7 +67,7 @@ def check_archive(root, approved=None):
             failures.append(f"Invalid asset {relative}: {error}")
 
     files = sorted(path for path in root.rglob("*") if path.is_file()
-                   and not {".git", ".venv", "venv"}.intersection(path.relative_to(root).parts))
+                   and not {".git", ".venv", "venv", ".ipynb_checkpoints"}.intersection(path.relative_to(root).parts))
     approved_notebooks = {entry["path"] for entry in approved if Path(entry["path"]).suffix.lower() == ".ipynb"}
     for path in files:
         relative = str(path.relative_to(root))

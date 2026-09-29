@@ -83,6 +83,12 @@ class ArchiveChecksTest(unittest.TestCase):
                 self.assert_rejected("Notebook outside approved archive")
                 path.unlink()
 
+    def test_local_notebook_checkpoints_are_ignored(self):
+        folder = self.root / "nested/.ipynb_checkpoints"
+        folder.mkdir(parents=True)
+        (folder / "checkpoint.ipynb").write_text("Local stale notebook")
+        self.assertEqual(self.result(), (0, ""))
+
     def test_added_documentation_is_allowed(self):
         (self.root / "docs/new-guide.md").write_text("# New guide\n")
         self.assertEqual(self.result(), (0, ""))
