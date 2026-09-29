@@ -1,0 +1,18 @@
+{
+  "files": [
+    {
+      "source_path": "Math_Senior_Seminar/Paper.pdf",
+      "path": "Math_Senior_Seminar/Paper.pdf",
+      "source_sha256": "25f40444b986011a9e1ed1e63b469b836352c52d48b1d5edf6f368cfe93aa03c",
+      "sha256": "25f40444b986011a9e1ed1e63b469b836352c52d48b1d5edf6f368cfe93aa03c",
+      "bytes": 236776
+    },
+    {
+      "source_path": "README.md",
+      "path": "docs/original-readme.md",
+      "source_sha256": "3d6c91ee366dd4a551df3d4cb1a02d823bc343fef9ba3c66b9db78602351276b",
+      "sha256": "3d6c91ee366dd4a551df3d4cb1a02d823bc343fef9ba3c66b9db78602351276b",
+      "bytes": 101
+    }
+  ]
+}
