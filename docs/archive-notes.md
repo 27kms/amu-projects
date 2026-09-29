@@ -18,8 +18,10 @@ Run the synthetic regression tests with `python3 -m unittest discover -s scripts
 
 Git commits for this import are attributed to `27kms`. The paper retains its original author name and citations. No additional license is assigned by this import.
 
-## Validation scope
+## Preservation contract
 
-The checker compares manifest source and destination paths with an independent fixed inventory in the script. It verifies imported bytes against the manifest and checks that change descriptions agree with its source and imported hashes. The manifest records provenance; it is not an independent authentication of the original files.
+`scripts/approved-imports.json` fixes the reviewed source paths, destination paths, original hashes, imported hashes, and sizes. It was established by comparing the import with the downloaded files. The checker requires the manifest to match this independent baseline and imported bytes to match the approved hashes. Editing the manifest alone cannot authorize an archive change.
 
-All repository notebooks, including additions outside the import manifest, receive structure checks and checks for eight-digit values following a student-ID label and nonempty `grader_api_key` values. Local `.git`, `.venv`, and `venv` directories are excluded. Grading-key fields must be empty or use `null`, `None`, or `~`; runtime expressions are not supported in this static archive. These checks cover the known assignment fields, not every possible secret format.
+These are preserved snapshots. Any change to an imported notebook, including restoring a redacted value in any syntax or location, fails its hash check. Additional notebooks are rejected, including case variants of `.ipynb`. Local `.git`, `.venv`, and `venv` directories are excluded. Documentation and maintenance scripts may still be edited.
+
+The checker does not assess arbitrary notebook content for secrets. An intentional future archive revision requires a separately reviewed baseline update and a fresh content review. The baseline is a repository invariant, not protection against someone deliberately changing both the baseline and validator.
